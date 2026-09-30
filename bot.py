@@ -785,7 +785,7 @@ def setup_automatic_schedule(application, data):
         # after the intended 6:30 PM IST schedule.
         application.job_queue.run_once(
             automatic_poll_job,
-            when=0.1,
+            when=timedelta(seconds=5),
             data={"scheduled_for": scheduled_for},
             name=f"missed_automatic_poll_{int(scheduled_for.timestamp())}",
         )
