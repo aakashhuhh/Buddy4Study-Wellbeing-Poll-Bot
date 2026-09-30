@@ -1,0 +1,5 @@
+.env
+poll_data.json
+__pycache__/
+*.pyc
+bot.py_previous_version.txt
