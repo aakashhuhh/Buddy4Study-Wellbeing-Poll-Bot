@@ -1,5 +1,13 @@
+# Secrets and live data: NEVER commit these
 .env
 poll_data.json
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.csv
+
+# Python
 __pycache__/
 *.pyc
-bot.py_previous_version.txt
+venv/
+.venv/

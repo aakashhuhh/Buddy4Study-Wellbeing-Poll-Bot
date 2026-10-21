@@ -710,14 +710,25 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+
+
+
 # --------------------------------------------------
 # /STATUS
 # --------------------------------------------------
+
 
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await is_admin(update, context):
         await update.message.reply_text(
             "❌ This command is available to group admins only."
+        )
+        return
+
+    # Only allow /status from the group
+    if update.effective_chat.type not in ["group", "supergroup"]:
+        await update.message.reply_text(
+            "Please use /status inside the Wellbeing Support group."
         )
         return
 
@@ -730,7 +741,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     next_poll_text = format_ist(next_poll_at)
 
-    await update.message.reply_text(
+    status_message = (
         "🌿 Wellbeing Poll Bot Status\n\n"
         f"📊 Total polls: {len(POLLS)}\n"
         f"🎲 Used in current cycle: {used}\n"
@@ -740,6 +751,57 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "⏳ Poll duration: 24 hours\n"
         f"🗓️ Next automatic poll: {next_poll_text}"
     )
+
+    # Send status privately to the admin who used /status
+    try:
+        await context.bot.send_message(
+            chat_id=update.effective_user.id,
+            text=status_message
+        )
+
+        # Delete the /status command from the group
+        try:
+            await update.message.delete()
+        except Exception:
+            pass
+
+    except Exception:
+        # If the bot cannot send the private message
+        await update.message.reply_text(
+            "❌ I couldn't send the status to your private chat. "
+            "Please open the bot in private chat and send /start first."
+        )
+
+#-----------------------------------------------------------------------------------
+# Previous status
+#-----------------------------------------------------------------------------------
+
+# async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     if not await is_admin(update, context):
+#         await update.message.reply_text(
+#             "❌ This command is available to group admins only."
+#         )
+#         return
+
+#     data = load_data()
+
+#     used = len(data.get("used_polls", []))
+#     remaining = len(POLLS) - used
+#     total_sent = data.get("total_sent", 0)
+#     next_poll_at = data.get("next_poll_at")
+
+#     next_poll_text = format_ist(next_poll_at)
+
+#     await update.message.reply_text(
+#         "🌿 Wellbeing Poll Bot Status\n\n"
+#         f"📊 Total polls: {len(POLLS)}\n"
+#         f"🎲 Used in current cycle: {used}\n"
+#         f"🔄 Remaining before reset: {remaining}\n"
+#         f"📨 Total polls sent: {total_sent}\n"
+#         "⏱️ Schedule: Every 2 days at 6:30 PM IST\n"
+#         "⏳ Poll duration: 24 hours\n"
+#         f"🗓️ Next automatic poll: {next_poll_text}"
+#     )
 
 
 # --------------------------------------------------
