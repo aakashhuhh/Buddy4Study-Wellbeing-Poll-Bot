@@ -504,6 +504,68 @@ POLLS = [
 
     {"question": "What's one small thing that made you happy recently? 😊", "options": ["👥 Someone's support", '🎉 Good news', '🏆 Small achievement', '🌿 A peaceful moment', '☀️ Something unexpected']},
 
+    # ---- Added 21 Oct 2026 (polls 21–50) ----
+
+    {"question": 'How well did you sleep last night? 😴', "options": ['😴 Very well', '🙂 Well', '😐 Okay', '😕 Not well']},
+
+    {"question": 'What are you looking forward to this week? 🌟', "options": ['📚 Learning something new', '👥 Meeting friends', '🎉 An event', '😴 Some rest', '🌿 Free time']},
+
+    {"question": 'How calm do you feel right now? 🧘', "options": ['😌 Very calm', '🙂 Calm', '😐 A bit restless', '😟 Quite stressed', '🫂 Need some support']},
+
+    {"question": 'Who do you usually talk to when something is on your mind? 💬', "options": ['👨\u200d👩\u200d👧 Family', '👥 Friends', '👩\u200d🏫 Mentor/Teacher', '📝 I write it down', '🤐 I keep it to myself']},
+
+    {"question": 'How do you usually start your day? 🌅', "options": ['🧘 Quiet time', '🏃 Exercise', '📱 Phone', '☕ Tea/Coffee', '📚 Straight to work']},
+
+    {"question": 'How satisfied are you with your progress this month? 📈', "options": ['🌟 Very satisfied', '🙂 Satisfied', '😐 Neutral', '😕 Not satisfied']},
+
+    {"question": 'What makes it hardest for you to focus? 🎯', "options": ['📱 Phone/Notifications', '😴 Tiredness', '🤯 Too many tasks', '🔊 Noise', '💭 Overthinking']},
+
+    {"question": 'How often do you take short breaks while studying or working? ⏸️', "options": ['🙂 Regularly', '😐 Sometimes', '😕 Rarely', '🚫 Almost never']},
+
+    {"question": 'Which skill would you like to build next? 🛠️', "options": ['🗣️ Communication', '💻 Tech skills', '⏰ Time management', '🧠 Confidence', '🤝 Teamwork']},
+
+    {"question": 'How connected do you feel to the scholar community? 🤝', "options": ['🫶 Very connected', '🙂 Somewhat', '😐 Neutral', '😕 Not yet']},
+
+    {"question": 'Which session would you like in the community? 🎤', "options": ['🧘 Stress management', '💼 Career guidance', '📚 Study techniques', '💬 Peer sharing', '🎨 Fun activities']},
+
+    {"question": 'How do you celebrate small wins? 🎉', "options": ['🍫 A small treat', '👥 Tell someone', '😴 Take a break', '📝 Note it down', "🤷 I usually don't"]},
+
+    {"question": 'How kind have you been to yourself this week? 💛', "options": ['💛 Very kind', '🙂 Mostly kind', '😐 Not sure', '😕 Too hard on myself']},
+
+    {"question": 'How often do you spend time outdoors? 🌳', "options": ['🌟 Daily', '🙂 A few times a week', '😐 Occasionally', '😕 Rarely']},
+
+    {"question": 'What helps you sleep better? 🌙', "options": ['📵 No phone before bed', '🎵 Calm music', '📖 Reading', '🧘 Relaxing/Breathing', '🛏️ Fixed sleep time']},
+
+    {"question": 'How organised do you feel this week? 🗂️', "options": ['🌟 Very organised', '🙂 Mostly organised', '😐 A bit scattered', '😓 Overwhelmed']},
+
+    {"question": 'What is your biggest motivation right now? 🔥', "options": ['🎓 Education', '💼 Career', '👨\u200d👩\u200d👧 Family', '🌍 Making a difference', '🌱 Personal growth']},
+
+    {"question": 'How comfortable are you asking for help when you need it? 🙋', "options": ['😊 Very comfortable', '🙂 Comfortable', '😐 Sometimes hesitate', '😕 Find it hard']},
+
+    {"question": 'Which hobby would you like to spend more time on? 🎨', "options": ['🎨 Art/Craft', '🎵 Music', '📖 Reading', '⚽ Sports', '✍️ Writing']},
+
+    {"question": 'How would you describe your mood this week? 🌈', "options": ['🌞 Bright', '🌤️ Mixed', '☁️ Cloudy', '🌧️ Heavy', '🫂 Need some support']},
+
+    {"question": 'How well are you managing your screen time? 📱', "options": ['💪 Very well', '🙂 Okay', '😐 Could be better', '😕 Too much']},
+
+    {"question": 'What helps you most before an exam or deadline? 📝', "options": ['📅 Planning early', '👥 Group study', '😴 Proper rest', '🧘 Staying calm', '🙏 Encouragement']},
+
+    {"question": 'How often do you feel grateful for something? 🙏', "options": ['🌟 Every day', '🙂 Often', '😐 Sometimes', '😕 Rarely']},
+
+    {"question": 'What would you like more of in your daily routine? ⏰', "options": ['😴 Rest', '🏃 Movement', '👥 Social time', '📚 Learning', '🌿 Me-time']},
+
+    {"question": 'How hopeful do you feel about your future? 🌅', "options": ['🌟 Very hopeful', '😊 Hopeful', '😐 Unsure', '😕 Worried']},
+
+    {"question": 'Which type of support matters most to you right now? 💙', "options": ['📚 Academic', '💼 Career', '💰 Financial planning', '💬 Emotional', '🤝 Peer support']},
+
+    {"question": 'How do you usually handle a tough day? 🌧️', "options": ['😴 Rest', '💬 Talk to someone', '🎵 Music', '🚶 Go for a walk', '📝 Write it down']},
+
+    {"question": 'How proud are you of something you did this week? 🏆', "options": ['🌟 Very proud', '😊 Proud', "😐 Haven't thought about it", '😕 Not really']},
+
+    {"question": 'How well have you taken care of yourself today? 🌼', "options": ['💧 Stayed hydrated', '🍲 Had good meals', '😴 Rested well', '🏃 Moved my body', '😅 Not much today']},
+
+    {"question": "What's one thing you want to do for yourself this weekend? 🌻", "options": ['😴 Rest', '👥 Meet friends', '🎬 Watch something', '🌳 Go outside', '📚 Learn something']},
+
 ]
 
 

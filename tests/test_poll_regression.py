@@ -23,7 +23,7 @@ POLL_ENGINE = [
 #                      after long downtime (see test_schedule_* tests).
 APPROVED_CHANGES = {"send_random_poll"}
 
-SETTINGS = ["POLLS", "POLL_INTERVAL", "POLL_DURATION", "IST", "FIRST_POLL_AT", "DATA_FILE"]
+SETTINGS = ["POLL_INTERVAL", "POLL_DURATION", "IST", "FIRST_POLL_AT", "DATA_FILE"]
 
 
 def parse(path):
@@ -66,9 +66,18 @@ class PollRegressionTests(unittest.TestCase):
             with self.subTest(setting=name):
                 self.assertEqual(self.dev_settings[name], self.prod_settings[name])
 
-    def test_twenty_questions(self):
-        polls = ast.literal_eval(self.dev_settings["POLLS"])
-        self.assertEqual(len(polls), 20)
+    def test_original_20_questions_unchanged_and_50_total(self):
+        # 21 Oct 2026: 30 polls added at the END, so old poll numbers in
+        # poll_data.json (used_polls, results) still point to the same questions.
+        prod = ast.literal_eval(self.prod_settings["POLLS"])
+        dev = ast.literal_eval(self.dev_settings["POLLS"])
+        self.assertEqual(len(prod), 20)
+        self.assertEqual(dev[:20], prod)
+        self.assertEqual(len(dev), 50)
+        self.assertEqual(len({p["question"] for p in dev}), 50)
+        for poll in dev:
+            self.assertTrue(2 <= len(poll["options"]) <= 10)
+            self.assertEqual(len(set(poll["options"])), len(poll["options"]))
 
     def test_membership_code_does_not_touch_poll_data(self):
         tree = ast.parse((ROOT / "app.py").read_text(encoding="utf-8"))
